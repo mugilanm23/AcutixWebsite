@@ -1,0 +1,26 @@
+body {
+  margin: 0;
+  font-family: 'Georgia', serif;
+  background-color:  #10182b;
+  color: #fff;
+  margin-top: 60px;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  font-family: 'Georgia', serif;
+}
+.app{
+    padding-top: 70px;
+}
+
+@media (max-width: 768px) {
+    .main-content {
+        padding-top: 90px; /* if navbar is taller on mobile */
+    }
+}
+

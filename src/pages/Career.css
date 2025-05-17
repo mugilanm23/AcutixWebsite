@@ -1,0 +1,205 @@
+.careers-page {
+  background-color: 	#10182b;
+  color: 	#ffffff;
+  padding: 40px 20px;
+  min-height: 100vh;
+  text-align: center;
+}
+h1{
+  color:	#f9a857;
+}
+
+.team-heading {
+
+  font-weight: bold;
+}
+
+.team-subtext {
+  font-size: 16px;
+  margin-top: 5px;
+  margin-bottom: 15px;
+}
+
+.open-btn {
+  background-color: 	#f9a857;
+  color: white;
+  padding: 10px 25px;
+  border: none;
+  border-radius: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-bottom: 40px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.open-btn:hover {
+  transform: translateY(-5px);
+  color:#42c3f4;
+}
+
+.section-title {
+  font-weight: bold;
+  margin-top: 40px;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+
+.job-listings {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.job-card {
+  background-color: #ffffff;
+  color: 	#10182b;
+  padding: 15px 20px;
+  text-align: left;
+  border-radius: 5px;
+  position: relative;
+  transition: transform 0.3s ease-in-out;
+}
+
+.job-card:hover {
+  transform: translateY(-10px);
+}
+
+.job-card h4 {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.job-details {
+  font-style: italic;
+  margin-bottom: 5px;
+}
+
+.job-desc {
+  margin-bottom: 5px;
+}
+
+.apply-now {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  color: 	#f7f9fc;
+  font-weight: bold;
+  text-decoration: none;
+  transition: transform 0.3s ease-in-out;
+}
+
+.culture-points {
+  list-style-type: none;
+  padding: 0;
+  margin-top: 10px;
+  font-weight: 500;
+  line-height: 2em;
+}
+
+.benefits-section {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.benefit-card {
+  background-color: #fcfcfc;
+  color: 	#10182b;
+  padding: 20px;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: transform 0.3s ease-in-out;
+}
+
+.benefit-card:hover {
+  transform: translateY(-10px);
+}
+
+/* Responsive design adjustments */
+
+/* For tablets and below */
+@media (max-width: 1024px) {
+  .job-listings {
+    max-width: 100%;
+    padding: 0 10px;
+  }
+
+  .open-btn {
+    width: 100%;
+    padding: 12px 20px;
+  }
+
+  .job-card {
+    padding: 20px;
+  }
+
+  .apply-now {
+    top: 15px;
+    right: 15px;
+  }
+
+  .benefits-section {
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  }
+
+  .section-title {
+    font-size: 16px;
+  }
+
+  .culture-points {
+    font-size: 14px;
+  }
+}
+
+/* For mobile phones */
+@media (max-width: 768px) {
+  .team-heading {
+    font-size: 22px;
+  }
+
+  .team-subtext {
+    font-size: 14px;
+  }
+
+  .open-btn {
+    width: 100%;
+    padding: 12px 20px;
+    font-size: 16px;
+  }
+
+  .job-card {
+    padding: 20px;
+    text-align: center;
+  }
+
+  .job-listings {
+    gap: 15px;
+  }
+
+  .job-card h4 {
+    font-size: 18px;
+  }
+
+  .job-details {
+    font-size: 14px;
+  }
+
+  .job-desc {
+    font-size: 14px;
+  }
+
+  .culture-points {
+    font-size: 14px;
+  }
+
+  .benefit-card {
+    padding: 15px;
+  }
+
+  .benefits-section {
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  }
+}

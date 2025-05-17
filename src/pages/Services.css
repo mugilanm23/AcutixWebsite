@@ -1,0 +1,101 @@
+.services-page {
+  background-color: 	#10182b;
+  padding: 50px 20px;
+  color: #ffffff;
+  min-height: 100vh;
+}
+
+.services-title {
+  font-weight: bold;
+  margin-bottom: 40px;
+  color: #f9a857;
+  text-align: center;
+}
+
+.services-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+.service-card {
+  background-color: 	#10182b;
+  border: 1px solid #42c3f4;
+  border-radius: 8px;
+  width: 100%;
+  max-width: 350px; /* Keep width consistent */
+  height: auto; /* Make height flexible */
+  padding: 30px;
+  box-sizing: border-box;
+  text-align: left;
+  transition: transform 0.3s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Keeps the button at the bottom */
+}
+
+.service-card:hover {
+  transform: translateY(-10px);
+}
+
+.service-imagen {
+  height: 180px;
+  background-color: #42c3f4;
+  border-radius: 6px;
+  margin-bottom: 15px;
+  /* Placeholder - replace background-color with an image later */
+}
+
+.service-heading {
+  font-size: 20px;
+  font-weight: 600;
+  color: #f9a857;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #444;
+  padding-bottom: 5px;
+}
+
+.service-card p {
+  margin-bottom: 15px;
+  color: #ffffff;
+}
+
+.service-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 20px 0;
+}
+
+.service-card li {
+  margin-bottom: 10px;
+  color: #ffffff;
+}
+
+.learn-more {
+  background-color: #f9a857;
+  color: #ffffff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: 600;
+  width: fit-content;
+}
+
+.learn-more:hover {
+  background-color: #42c3f4;
+}
+
+/* Responsive behavior */
+@media (max-width: 768px) {
+  .services-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .service-card {
+    max-width: 90%;
+    min-height: 450px; /* Slightly increase height for mobile view */
+  }
+}
