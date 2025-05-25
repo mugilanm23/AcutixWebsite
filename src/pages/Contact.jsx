@@ -13,6 +13,15 @@ const Contact = () => {
     additionalInfo: ''
   });
 
+  const [popupOpen, setPopupOpen] = useState(false);
+  const [scheduleData, setScheduleData] = useState({
+    name: '',
+    email: '',
+    type: 'Call',
+    date: '',
+    time: ''
+  });
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData(prev => ({ ...prev, [name]: value }));
@@ -22,6 +31,18 @@ const Contact = () => {
     e.preventDefault();
     console.log('Form Submitted:', formData);
     alert('Form submitted successfully!');
+  };
+
+  const handleScheduleChange = (e) => {
+    const { name, value } = e.target;
+    setScheduleData(prev => ({ ...prev, [name]: value }));
+  };
+
+  const handleScheduleSubmit = (e) => {
+    e.preventDefault();
+    console.log('Schedule Request:', scheduleData);
+    alert('Schedule request submitted!');
+    setPopupOpen(false);
   };
 
   return (
@@ -36,8 +57,32 @@ const Contact = () => {
         </p>
 
         <div className="contact-buttons">
-          <button className="contact-btn">Schedule a Call</button>
+          <button className="contact-btn" onClick={() => setPopupOpen(true)}>Schedule a Call</button>
         </div>
+
+        {popupOpen && (
+          <div className="popup-overlay">
+            <div className="popup">
+              <h3>Schedule a Meeting or Call</h3>
+              <form className="popup-form" onSubmit={handleScheduleSubmit}>
+                <input type="text" name="name" placeholder="Your Name" value={scheduleData.name} onChange={handleScheduleChange} required />
+                <input type="email" name="email" placeholder="Email" value={scheduleData.email} onChange={handleScheduleChange} required />
+                <select name="type" value={scheduleData.type} onChange={handleScheduleChange}>
+                  <option value="Call">Call</option>
+                  <option value="Meet">Meeting</option>
+                </select>
+                <input type="date" name="date" value={scheduleData.date} onChange={handleScheduleChange} required />
+                <input type="time" name="time" value={scheduleData.time} onChange={handleScheduleChange} required />
+                <textarea name="additionalInfo" placeholder="Additional message" value={formData.additionalInfo} onChange={handleChange} rows="4" />
+
+                <div className="popup-buttons">
+                  <button type="submit">Submit</button>
+                  <button type="button" className="cancel" onClick={() => setPopupOpen(false)}>Cancel</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        )}
 
         <h3 className="form-title">Let us know your purpose</h3>
         <form className="contact-form" onSubmit={handleSubmit}>
@@ -54,8 +99,10 @@ const Contact = () => {
           <input type="tel" name="phone" value={formData.phone} onChange={handleChange} required />
 
           <label>Purpose</label>
-          <select name="helpType" value={formData.helpType} onChange={handleChange} required>
-            <option value="">Select a purpose</option>
+          <select name="helpType" value={formData.helpType} onChange={handleChange}  required  >
+            <option value="" disabled hidden>
+              Select your purpose
+            </option>
             <option value="web">Website Development</option>
             <option value="software">Software Solutions</option>
             <option value="tech_meetup">Request a Tech Meetup</option>
@@ -64,12 +111,7 @@ const Contact = () => {
           </select>
 
           <label>Additional Information</label>
-          <textarea
-            name="additionalInfo"
-            value={formData.additionalInfo}
-            onChange={handleChange}
-            rows="5"
-          ></textarea>
+          <textarea name="additionalInfo" value={formData.additionalInfo} onChange={handleChange} rows="5" />
 
           <button type="submit" className="submit-btn">Submit Form</button>
         </form>

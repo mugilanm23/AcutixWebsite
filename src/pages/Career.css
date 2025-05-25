@@ -85,7 +85,7 @@ h1{
   position: absolute;
   right: 20px;
   top: 20px;
-  color: 	#f7f9fc;
+  color: 	#3e639c;
   font-weight: bold;
   text-decoration: none;
   transition: transform 0.3s ease-in-out;
@@ -104,6 +104,10 @@ h1{
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 20px;
   margin-top: 20px;
+}
+.benefits-section h4{
+  color: 	#3e639c;
+  font-size: large;
 }
 
 .benefit-card {
