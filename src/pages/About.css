@@ -142,7 +142,6 @@
   .value-card {
     width: 100%;
     padding: 15px;
-    font-size: 14px;
   }
 
   .leader-photo {
@@ -373,4 +372,35 @@
   .testimonial-card {
     flex: 0 0 40%;
   }
+}
+.testimonial-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  position: relative;
+  margin-top: 20px;
+}
+
+.scroll-button {
+  color: rgb(0, 0, 0);
+  border: none;
+  padding: 4px 3px;
+  font-size: 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.scroll-button:hover {
+  background-color: #0f3c72;
+  color: #e0e6f5;
+}
+.value-card h4{
+  color: #FC834A;
+  font-size: x-large;
+}
+.card h2{
+  color: #FC834A;
+  font-size:30px;
 }

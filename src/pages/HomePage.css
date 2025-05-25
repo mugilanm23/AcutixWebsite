@@ -58,6 +58,7 @@ h1 {
   position: relative;
   z-index: 2;
   max-width: 800px;
+  text-align: center;
 }
 
 .intro-content p {

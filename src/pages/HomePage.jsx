@@ -17,7 +17,7 @@ function HomePage() {
 
       <section className="intro">
         <div className="intro-content">
-          <h1>ACUTIX SOFTWARE LLP</h1>
+          <h1>ACUTIX SOFT LLP</h1>
           <p>Transforming and Empowering Small Businesses through Digitalization</p>
         </div>
       </section>

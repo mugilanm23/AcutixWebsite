@@ -1,5 +1,5 @@
 .navbar {
-  background-color: 	#3D3F61;
+  background-color: #3D3F61;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -23,7 +23,7 @@
 
 .company-name {
   font-weight: bold;
-  color: 	#d8e0e7;
+  color: #d8e0e7;
 }
 
 .navbar-links {
@@ -36,12 +36,22 @@
   padding: 6px 12px;
   border-radius: 10px;
   text-decoration: none;
-  color: 		#f0eaea;
+  color: #f0eaea;
+  transition: background-color 0.2s ease, color 0.2s ease;
 }
 
 .navbar-links li a:hover {
   background-color: #FC834A;
-  color: 	#e8ecf0;
+  color: #e8ecf0;
+}
+
+.navbar-links li a.active {
+  background-color: #FC834A;
+  color: #e8ecf0;
+}
+
+.nav-link {
+  display: inline-block;
 }
 
 /* For mobile phones */
@@ -67,18 +77,18 @@
   .navbar-links {
     flex-direction: column;
     gap: 15px;
-    display: none; /* Hide links by default */
+    display: none;
     align-items: center;
     position: absolute;
-    top: 60px; /* Adjust to push the menu below the icon */
+    top: 60px;
     left: 0;
     right: 0;
-    background-color: #FC834A; /* Match the navbar background */
+    background-color: #FC834A;
     padding: 20px 0;
   }
 
   .navbar-links.active {
-    display: flex; /* Show links when toggled */
+    display: flex;
   }
 
   .navbar-links li a {
@@ -86,7 +96,11 @@
     padding: 8px 12px;
   }
 
-  /* Hamburger icon (3 bars) */
+  .navbar-links li a.active {
+    background-color: #fff;
+    color: #FC834A;
+  }
+
   .navbar-toggle {
     display: block;
     background-color: transparent;
@@ -96,14 +110,14 @@
     z-index: 1001;
     position: absolute;
     right: 25px;
-    top: 15px; /* Adjust to position the icon properly */
+    top: 15px;
   }
 
   .navbar-toggle .bar {
     display: block;
     width: 25px;
     height: 3px;
-    background-color:#e7ebee;
+    background-color: #e7ebee;
     margin: 5px auto;
     transition: 0.3s;
   }

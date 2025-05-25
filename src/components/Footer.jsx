@@ -20,7 +20,7 @@ function Footer() {
           <ul>
             <li>Home</li>
             <li>Services</li>
-            <li>Carrers</li>
+            <li>Careers</li>
             <li>About us</li>
             <li>Contact us</li>
           </ul>

@@ -7,44 +7,55 @@ import Footer from '../components/Footer';
 const testimonials = [
   {
     name: 'prathab singh',
-    title: 'CEO, Example Corp',
-    review: "I have worked as a freelancer with Digital Touch IT Solutions, and it has been a fantastic experience. It's a great place to work and make meaningful contributions. Their internship support for students is highly commendable. For small businesses, they are the ideal choice for software solutions.",
+    title: '',
+    review: "I have worked as freelancer with Acutix soft LLP( formerly Digital Touch IT Solutions ), and it has been a fantastic experience. It's a great place to work and make meaningful contributions. Their internship support for students is highly commendable. For small businesses, they are the ideal choice for software solutions.",
     rating: 4,
   },
   {
     name: "Rishi krishna",
-    title: 'Manager, InnovateX',
-    review: "We had the privilege of collaborating with an expert from Digital Touch for an event organized by CIT (HackFusion-24). The panel member carefully assessed all participants' projects and identified the best ones. ",
+    title: '',
+    review: "We had the privilege of collaborating with an expert from Acutix soft LLP( formerly Digital Touch IT Solutions ) for an event organized by CIT (HackFusion-24). The panel member carefully assessed all participants' projects and identified the best ones. ",
     rating: 5,
   },
   {
     name: "Dinesh Vasudevan",
-    title: 'Director, TechEdge',
-    review: "I collaborated with Digital Touch IT Solutions to develop websites for my cricket coaching center. Their team delivered an impressive website at a reasonable cost. Definitely a reliable company for your software needs!",
+    title: '',
+    review: "I collaborated with Acutix soft LLP( formerly Digital Touch IT Solutions ) to develop websites for my cricket coaching center. Their team delivered an impressive website at a reasonable cost. Definitely a reliable company for your software needs!",
     rating: 5,
   },
   {
     name: "Suriyakumar CR",
-    title: 'HR, TalentScope',
+    title: '',
     review: "Skilled software professionals, their expertise and dedication made a significant impact on clients' project. They get into the requirements well and delivering high-quality solutions.",
     rating: 5,
   },
   {
     name: "Nithisha J",
-    title: 'CTO, Nexa Labs',
-    review: "I collaborated with experts from Digital Touch to conduct a knowledge-sharing session on IoT and Blockchain. They delivered an insightful and highly valuable session.",
+    title: '',
+    review: "I collaborated with experts from Acutix soft LLP( formerly Digital Touch IT Solutions ) to conduct a knowledge-sharing session on IoT and Blockchain. They delivered an insightful and highly valuable session.",
     rating: 4,
   },
 ];
 
-const About = () => {
+    const About = () => {
+      const scrollTestimonials = (direction) => {
+      const container = document.getElementById('testimonial-scroll');
+      const scrollAmount = 300;
+
+      if (direction === 'left') {
+        container.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+      } else {
+        container.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+      }
+    };
+
   return (
     <>
       <Navbar />
       <div className="aboutus-container">
         <h1 className="section-title">About Us</h1>
         <p className="section-subtext">
-          At Acutix Soft LLP, we are passionate about driving digital transformation for small businesses. Our expert team is dedicated to providing innovative, affordable, and customer-focused solutions that help businesses thrive in today’s competitive world. Our journey is defined by a commitment to excellence, continuous learning, and the pursuit of impactful technology solutions.
+          At Acutix Soft LLP, we are passionate about driving digital transformation for small businesses. Our expert team is dedicated to provide innovative, affordable, and customer-focused solutions that help businesses thrive in today’s competitive world. Our journey is defined by a commitment to excellence, continuous learning, and the pursuit of impactful technology solutions.
         </p>
 
         <div className="vision-mission">
@@ -135,31 +146,38 @@ const About = () => {
           </div>
         </div>
          <section className="testimonial-section">
-      <h1 className="testimonial-heading">What Our Clients Say</h1>
-      <div className="testimonial-scroll-wrapper">
-        <div className="testimonial-scroll-container">
-          {testimonials.map((item, index) => (
-            <div className="testimonial-card" key={index}>
-              <p className="testimonial-text">{item.review}</p>
-              <div className="testimonial-footer">
-                <div className="user-info">
-                  <div className="user-avatar"></div>
-                  <div>
-                    <div className="user-name">{item.name}</div>
-                    <div className="user-title">{item.title}</div>
+        <h1 className="testimonial-heading">What Our Clients Say</h1>
+        <div className="testimonial-controls">
+          <button onClick={() => scrollTestimonials('left')} className="scroll-button">←</button>
+
+          <div className="testimonial-scroll-wrapper" id="testimonial-scroll">
+            <div className="testimonial-scroll-container">
+              {testimonials.map((item, index) => (
+                <div className="testimonial-card" key={index}>
+                  <p className="testimonial-text">{item.review}</p>
+                  <div className="testimonial-footer">
+                    <div className="user-info">
+                      <div className="user-avatar"></div>
+                      <div>
+                        <div className="user-name">{item.name}</div>
+                        <div className="user-title">{item.title}</div>
+                      </div>
+                    </div>
+                    <div className="stars">
+                      {[...Array(5)].map((_, i) => (
+                        <span key={i} className={i < item.rating ? 'star filled' : 'star'}>★</span>
+                      ))}
+                    </div>
                   </div>
                 </div>
-                <div className="stars">
-                  {[...Array(5)].map((_, i) => (
-                    <span key={i} className={i < item.rating ? 'star filled' : 'star'}>★</span>
-                  ))}
-                </div>
-              </div>
+              ))}
             </div>
-          ))}
+          </div>
+
+          <button onClick={() => scrollTestimonials('right')} className="scroll-button">→</button>
         </div>
-      </div>
-    </section>
+      </section>
+
       </div>
       <Footer />
     </>
