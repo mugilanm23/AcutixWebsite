@@ -21,7 +21,7 @@ const Career = () => {
       description: "implement CI?CD pipelines, containerization , clout etc..",
     }
   ];
-
+  
   const benefits = [
     {
       title: "Flexible Work Schedule",

@@ -1,12 +1,12 @@
 .careers-page {
-  background-color: 	#10182b;
-  color: 	#ffffff;
+  background-color: 	#e9f0f1;
+  color: 	#191818;
   padding: 40px 20px;
   min-height: 100vh;
   text-align: center;
 }
 h1{
-  color:	#f9a857;
+  color:	#FC834A;
 }
 
 .team-heading {
@@ -21,7 +21,7 @@ h1{
 }
 
 .open-btn {
-  background-color: 	#f9a857;
+  background-color:#FC834A;
   color: white;
   padding: 10px 25px;
   border: none;
@@ -53,9 +53,10 @@ h1{
 }
 
 .job-card {
-  background-color: #ffffff;
+  background-color: #f0f4f5;
   color: 	#10182b;
   padding: 15px 20px;
+  border: 1px solid #3D3F61;
   text-align: left;
   border-radius: 5px;
   position: relative;
@@ -106,9 +107,10 @@ h1{
 }
 
 .benefit-card {
-  background-color: #fcfcfc;
+  background-color: #f0f4f5;
   color: 	#10182b;
   padding: 20px;
+  border: 1px solid #3D3F61;
   border-radius: 5px;
   font-weight: bold;
   transition: transform 0.3s ease-in-out;

@@ -78,8 +78,8 @@ function HomePage() {
         <section className="cta-grid">
           <div className="cta-box">
             <p>
-              At Acutix Soft LLP, we’re not just providing services — we’re solving real problems with smart, scalable digital solutions. 
-              From website development to enterprise automation, we tailor every solution to meet our clients’ unique needs. 
+              At Acutix Soft LLP, we’re not just providing services — we’re solving real problems with smart, scalable digital solutions.
+              From website development to enterprise automation, we tailor every solution to meet our clients’ unique needs.
               Our commitment to quality and innovation has earned us the trust of growing businesses across industries.
             </p>
             <Link className={isActive('/services') ? 'active' : ''} to="/services">
@@ -89,7 +89,7 @@ function HomePage() {
 
           <div className="cta-box">
             <p>
-              Whether you're a startup looking for reliable tech partners or a passionate individual seeking to grow your career in tech, 
+              Whether you're a startup looking for reliable tech partners or a passionate individual seeking to grow your career in tech,
               Acutix is the place to thrive. Join us as a client or as a team member — and be a part of something impactful.
             </p>
             <Link className={isActive('/careers') ? 'active' : ''} to="/career">

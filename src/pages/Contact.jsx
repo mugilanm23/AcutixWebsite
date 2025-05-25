@@ -36,7 +36,6 @@ const Contact = () => {
         </p>
 
         <div className="contact-buttons">
-          <button className="contact-btn">Contact Us</button>
           <button className="contact-btn">Schedule a Call</button>
         </div>
 

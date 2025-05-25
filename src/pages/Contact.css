@@ -1,7 +1,7 @@
 .contact-page {
-  background-color: #10182b;
+  background-color: #e9f0f1;
   padding: 40px 20px;
-  color: white;
+  color: rgb(38, 36, 36);
   min-height: 100vh;
   text-align: center;
   overflow-x: hidden;
@@ -9,7 +9,7 @@
 
 .contact-heading {
   font-weight: bold;
-  color: #f9fafa;
+  color: #202121;
   margin-bottom: 10px;
 }
 
@@ -17,7 +17,7 @@
   max-width: 600px;
   margin: 10px auto 30px;
   font-size: 16px;
-  color: #ccc;
+  color: #242222;
   line-height: 1.6;
 }
 
@@ -29,7 +29,7 @@
 }
 
 .contact-btn {
-  background-color: 	#f9a857;
+  background-color: 	#FC834A;
   color: #fff;
   padding: 10px 20px;
   border: none;
@@ -60,7 +60,7 @@
 
 .contact-form label {
   font-weight: 500;
-  color: #ddd;
+  color: #252424;
 }
 
 .contact-form input,
@@ -78,7 +78,7 @@
 }
 
 .submit-btn {
-  background-color: 	#f9a857;
+  background-color: 	#FC834A;
   color: white;
   padding: 10px 20px;
   font-weight: 600;
