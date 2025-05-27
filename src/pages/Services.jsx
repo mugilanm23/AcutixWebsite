@@ -42,36 +42,96 @@ const popupContent = {
       </ul>
     </>
   ),
-  "Tech Meetup": (
-    <>
-      <h2>Schedule a Tech Meetup</h2>
-      <form className="popup-form">
-        <label>Meetup Topic:<input type="text" required /></label>
-        <label>Date:<input type="date" required /></label>
-        <label>Time:<input type="time" required /></label>
-        <label>Host Name:<input type="text" required /></label>
-        <label>Mode:<select><option>Online</option><option>Offline</option></select></label>
-        <label>Description:<textarea rows="4" required /></label>
-        <button type="submit" className="schedule-btn">Schedule Now</button>
-      </form>
-    </>
-  ),
-  "Internship Program": (
-    <>
-      <h2>Apply for Internship</h2>
-      <form className="popup-form">
-        <label>Full Name:<input type="text" required /></label>
-        <label>Email:<input type="email" required /></label>
-        <label>Phone:<input type="tel" required /></label>
-        <label>LinkedIn:<input type="url" /></label>
-        <label>GitHub/Portfolio:<input type="url" /></label>
-        <label>Resume:<input type="file" /></label>
-        <label>Domain:<select><option>Frontend</option><option>Backend</option><option>Fullstack</option></select></label>
-        <label>Why you want to join:<textarea rows="4" required /></label>
-        <button type="submit" className="apply-btn">Apply Now</button>
-      </form>
-    </>
-  )
+"Tech Meetup": (
+  <>
+    <h2>Schedule a Tech Meetup</h2>
+    <form
+      className="popup-form"
+      onSubmit={async (e) => {
+        e.preventDefault();
+        const formData = new FormData(e.target);
+        const data = Object.fromEntries(formData.entries());
+
+        try {
+          const response = await fetch('http://localhost:5000/api/schedule-meetup', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(data),
+          });
+
+          if (response.ok) {
+            alert("Meeting request sent successfully!");
+            e.target.reset();
+          } else {
+            alert("Failed to send request.");
+          }
+        } catch (error) {
+          alert("Server error. Try again later.");
+        }
+      }}
+    >
+      <label>Meetup Topic:<input type="text" name="topic" required /></label>
+      <label>Date:<input type="date" name="date" required /></label>
+      <label>Time:<input type="time" name="time" required /></label>
+      <label>Host Name:<input type="text" name="host" required /></label>
+      <label>Mode:
+        <select name="mode">
+          <option>Online</option>
+          <option>Offline</option>
+        </select>
+      </label>
+      <label>Description:<textarea name="description" rows="4" required /></label>
+      <button type="submit" className="schedule-btn">Schedule Now</button>
+    </form>
+  </>
+),
+
+"Internship Program": (
+  <>
+    <h2>Apply for Internship</h2>
+    <form
+      className="popup-form"
+      onSubmit={async (e) => {
+        e.preventDefault();
+        const formData = new FormData(e.target);
+        const data = Object.fromEntries(formData.entries());
+
+        try {
+          const response = await fetch('http://localhost:5000/api/apply-internship', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(data),
+          });
+
+          if (response.ok) {
+            alert("Application submitted successfully!");
+            e.target.reset();
+          } else {
+            alert("Failed to submit application.");
+          }
+        } catch (error) {
+          alert("Server error. Try again later.");
+        }
+      }}
+    >
+      <label>Full Name:<input type="text" name="name" required /></label>
+      <label>Email:<input type="email" name="email" required /></label>
+      <label>Phone:<input type="tel" name="phone" required /></label>
+      <label>LinkedIn:<input type="url" name="linkedin" /></label>
+      <label>GitHub/Portfolio:<input type="url" name="portfolio" /></label>
+      <label>Domain:
+        <select name="domain">
+          <option>Frontend</option>
+          <option>Backend</option>
+          <option>Fullstack</option>
+        </select>
+      </label>
+      <label>Why you want to join:<textarea name="reason" rows="4" required /></label>
+      <button type="submit" className="apply-btn">Apply Now</button>
+    </form>
+  </>
+)
+
 };
 
 const Services = () => {
