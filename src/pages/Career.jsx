@@ -4,24 +4,29 @@ import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 
 const Career = () => {
+  const linkedInJobsUrl = "https://www.linkedin.com/company/acutix/jobs/"; // <-- Put your actual LinkedIn jobs URL here
+
   const jobOpenings = [
     {
       title: "Senior Full stack Developer",
       details: "5+ years experience , Full time work",
       description: "lead development of core products",
+      applyUrl: linkedInJobsUrl // You can use different URLs if you want
     },
     {
       title: "UX/UI Designer",
       details: "3+ years of experience , onsite, fulltime",
       description: "create engaging user experience and web interfaces",
+      applyUrl: linkedInJobsUrl
     },
     {
       title: "Devops Engineer",
       details: "4+ years experiences , full time",
-      description: "implement CI?CD pipelines, containerization , clout etc..",
+      description: "implement CI/CD pipelines, containerization, cloud etc.",
+      applyUrl: linkedInJobsUrl
     }
   ];
-  
+
   const benefits = [
     {
       title: "Flexible Work Schedule",
@@ -33,7 +38,7 @@ const Career = () => {
     },
     {
       title: "Annual Learning Budget",
-      desc: "annual budget of internship coursesAllocate funds for online courses, certifications, tech conferences, or workshops, helping employees stay updated and advance their skills."
+      desc: "Allocate funds for online courses, certifications, tech conferences, or workshops, helping employees stay updated and advance their skills."
     },
     {
       title: "Employee Wellness Program",
@@ -43,37 +48,53 @@ const Career = () => {
 
   return (
     <>
-    <Navbar/>
-    <div className="careers-page">
-      <h1 className="team-heading">JOIN OUR TEAM</h1>
-      <p className="team-subtext">build the future of technology with us</p>
-      <button className="open-btn">View open positions</button>
+      <Navbar />
+      <div className="careers-page">
+        <h1 className="team-heading">JOIN OUR TEAM</h1>
+        <p className="team-subtext">build the future of technology with us</p>
 
-      <h1 className="section-title">CURRENT JOB OPENINGS</h1>
-      <div className="job-listings">
-        {jobOpenings.map((job, index) => (
-          <div className="job-card" key={index}>
-            <h4>{job.title}</h4>
-            <p className="job-details">{job.details}</p>
-            <p className="job-desc">{job.description}</p>
-            <a href="#" className="apply-now">APPLY NOW</a>
-          </div>
-        ))}
-      </div>
+        {/* LinkedIn Jobs button */}
+        <button
+          className="open-btn"
+          onClick={() => window.open(linkedInJobsUrl, '_blank')}
+        >
+          View open positions
+        </button>
 
-      <h1 className="section-title">PERKS AND BENEFITS</h1>
-      <div className="benefits-section">
-        {benefits.map((item, index) => (
-          <div className="benefit-card" key={index}>
-            <h4>{item.title}</h4>
-            <p>{item.desc}</p>
-          </div>
-        ))}
+        <h1 className="section-title">CURRENT JOB OPENINGS</h1>
+        <div className="job-listings">
+          {jobOpenings.map((job, index) => (
+            <div className="job-card" key={index}>
+              <h4>{job.title}</h4>
+              <p className="job-details">{job.details}</p>
+              <p className="job-desc">{job.description}</p>
+
+              {/* Apply Now button linking to LinkedIn */}
+              <a
+                href={job.applyUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="apply-now"
+              >
+                APPLY NOW
+              </a>
+            </div>
+          ))}
+        </div>
+
+        <h1 className="section-title">PERKS AND BENEFITS</h1>
+        <div className="benefits-section">
+          {benefits.map((item, index) => (
+            <div className="benefit-card" key={index}>
+              <h4>{item.title}</h4>
+              <p>{item.desc}</p>
+            </div>
+          ))}
+        </div>
       </div>
-    </div>
-    <Footer/>
+      <Footer />
     </>
-  )
-}
+  );
+};
 
-export default Career
+export default Career;

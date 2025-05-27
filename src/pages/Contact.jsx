@@ -15,35 +15,92 @@ const Contact = () => {
 
   const [popupOpen, setPopupOpen] = useState(false);
   const [scheduleData, setScheduleData] = useState({
-    name: '',
-    email: '',
-    type: 'Call',
-    date: '',
-    time: ''
+  name: '',
+  email: '',
+  type: 'Call',
+  date: '',
+  time: '',
+  additionalInfo: ''  // Add this line
   });
+
 
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData(prev => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log('Form Submitted:', formData);
-    alert('Form submitted successfully!');
-  };
+const handleSubmit = async (e) => {
+  e.preventDefault();
+
+  try {
+    const response = await fetch('http://localhost:5000/api/contact', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(formData)
+    });
+
+    const data = await response.json();
+
+    if (response.ok) {
+      alert('Form submitted successfully!');
+      setFormData({
+        firstName: '',
+        lastName: '',
+        email: '',
+        phone: '',
+        helpType: '',
+        additionalInfo: ''
+      });
+    } else {
+      alert('Failed to submit: ' + data.message);
+    }
+  } catch (error) {
+    alert('Error submitting form. Try again later.');
+    console.error('Submission error:', error);
+  }
+};
+
 
   const handleScheduleChange = (e) => {
     const { name, value } = e.target;
     setScheduleData(prev => ({ ...prev, [name]: value }));
   };
 
-  const handleScheduleSubmit = (e) => {
-    e.preventDefault();
-    console.log('Schedule Request:', scheduleData);
-    alert('Schedule request submitted!');
-    setPopupOpen(false);
-  };
+const handleScheduleSubmit = async (e) => {
+  e.preventDefault();
+
+  try {
+    const response = await fetch('http://localhost:5000/api/schedule', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(scheduleData),
+    });
+
+    const data = await response.json();
+
+    if (response.ok) {
+      alert('Schedule request submitted successfully!');
+      setScheduleData({
+        name: '',
+        email: '',
+        type: 'Call',
+        date: '',
+        time: ''
+      });
+      setPopupOpen(false);
+    } else {
+      alert('Failed to submit schedule: ' + data.message);
+    }
+  } catch (error) {
+    alert('Error submitting schedule. Try again later.');
+    console.error('Schedule submission error:', error);
+  }
+};
+
 
   return (
     <>
@@ -111,7 +168,14 @@ const Contact = () => {
           </select>
 
           <label>Additional Information</label>
-          <textarea name="additionalInfo" value={formData.additionalInfo} onChange={handleChange} rows="5" />
+          <textarea
+            name="additionalInfo"
+            placeholder="Additional message"
+            value={scheduleData.additionalInfo}  // <-- Now connected to popup form state
+            onChange={handleScheduleChange}      // <-- The correct handler for popup form
+            rows="4"
+          />
+
 
           <button type="submit" className="submit-btn">Submit Form</button>
         </form>
