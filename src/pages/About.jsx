@@ -109,7 +109,6 @@ const testimonials = [
 </div>
 
 
-        {/* Director's Desk Section */}
         <h1 className="section-title">Director's Desk</h1>
         <div className="directors-desk">
           <div className="quote-box">

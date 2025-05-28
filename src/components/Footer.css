@@ -61,7 +61,6 @@
   font-size: 14px;
 }
 
-/* 📱 Mobile Responsive Design */
 @media (max-width: 768px) {
   .footer {
     padding: 25px 15px;
@@ -101,4 +100,13 @@
     font-size: 13px;
     margin-top: 20px;
   }
+}
+.footer-section ul li a {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.footer-section ul li a:hover {
+  color: #FC834A; 
 }

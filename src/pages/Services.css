@@ -1,5 +1,5 @@
 .services-page {
-  background-color: 	#e9f0f1;
+  background-color: #e9f0f1;
   padding: 50px 20px;
   color: #171616;
   min-height: 100vh;
@@ -20,32 +20,37 @@
 }
 
 .service-card {
-  background-color: 	#f0f4f5;
+  background-color: #f0f4f5;
   border: 1px solid #3D3F61;
   border-radius: 8px;
   width: 100%;
-  max-width: 350px; /* Keep width consistent */
-  height: auto; /* Make height flexible */
+  max-width: 350px;
+  height: auto;
   padding: 30px;
   box-sizing: border-box;
   text-align: left;
   transition: transform 0.3s ease-in-out;
   display: flex;
   flex-direction: column;
-  justify-content: space-between; /* Keeps the button at the bottom */
+  justify-content: space-between;
 }
 
 .service-card:hover {
   transform: translateY(-10px);
 }
 
+
 .service-imagen {
+  width: 100%;
   height: 180px;
   background-color: #42c3f4;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   border-radius: 6px;
   margin-bottom: 15px;
-  /* Placeholder - replace background-color with an image later */
 }
+
 
 .service-heading {
   font-size: 20px;
@@ -84,10 +89,10 @@
 }
 
 .learn-more:hover {
-  background-color:#FC834A;
+  background-color: #e76c2d;
 }
 
-/* Responsive behavior */
+
 @media (max-width: 768px) {
   .services-container {
     flex-direction: column;
@@ -95,11 +100,15 @@
   }
 
   .service-card {
-    max-width: 90%;
-    min-height: 450px; /* Slightly increase height for mobile view */
+    max-width: 95%;
+    min-height: 460px;
+  }
+
+  .service-imagen {
+    height: 180px;
   }
 }
-/* Popup Overlay */
+
 .popup-overlay {
   position: fixed;
   top: 0;
@@ -113,18 +122,23 @@
   z-index: 999;
   margin: auto;
 }
-/* Popup Content */
+
+
 .popup-content {
   background-color: #f0f4f5;
   color: #121111;
-  padding: 30px;
-  border-radius: 10px;
-  max-width: 500px;
+  padding: 35px;
+  border-radius: 20px;
+  max-width: 520px;
   width: 90%;
-  max-height: 90vh;
+  max-height: 80vh;
   overflow-y: auto;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
   position: relative;
+  box-sizing: border-box;
+
+  scrollbar-width: auto;
+  scrollbar-color: #efeff0 #1f3c75;
 }
 
 .popup-content h2 {
@@ -135,6 +149,21 @@
 .popup-content ul {
   padding-left: 20px;
   margin-bottom: 20px;
+}
+
+.popup-content::-webkit-scrollbar {
+  width: 8px;
+}
+
+.popup-content::-webkit-scrollbar-track {
+  background: #0d1422;
+  border-radius: 10px;
+}
+
+.popup-content::-webkit-scrollbar-thumb {
+  background-color: #1a59a6;
+  border-radius: 10px;
+  border: 2px solid #0d1422;
 }
 
 .popup-close {
@@ -148,86 +177,7 @@
   color: #333;
 }
 
-/* Form inside popup */
-.popup-form {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-}
 
-.popup-form label {
-  font-weight: 500;
-  color: #171616;
-  display: flex;
-  flex-direction: column;
-}
-
-.popup-form input,
-.popup-form select,
-.popup-form textarea {
-  padding: 8px 12px;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  font-size: 16px;
-  margin-top: 5px;
-}
-
-.popup-form button {
-  margin-top: 10px;
-  padding: 10px 20px;
-  background-color: #FC834A;
-  color: #ffffff;
-  border: none;
-  border-radius: 20px;
-  font-weight: bold;
-  cursor: pointer;
-  align-self: flex-start;
-}
-
-.popup-form button:hover {
-  background-color: #e76c2d;
-}
-
-/* Mobile responsiveness */
-@media (max-width: 600px) {
-  .popup-content {
-    padding: 20px;
-    max-width: 90%;
-  }
-
-  .popup-form input,
-  .popup-form select,
-  .popup-form textarea {
-    font-size: 14px;
-  }
-
-  .popup-form button {
-    width: 100%;
-    text-align: center;
-  }
-}
-/* Adjust button styles for specific popups */
-.popup-form .schedule-btn,
-.popup-form .apply-btn {
-  width: 100%;
-  padding: 12px;
-  font-size: 16px;
-  border-radius: 25px;
-  font-weight: 600;
-  background-color: #FC834A;
-  color: white;
-  border: none;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-  margin-top: 10px;
-}
-
-.popup-form .schedule-btn:hover,
-.popup-form .apply-btn:hover {
-  background-color: #e76c2d;
-}
-
-/* Better spacing and alignment inside the form */
 .popup-form {
   display: flex;
   flex-direction: column;
@@ -236,9 +186,10 @@
 
 .popup-form label {
   font-weight: 500;
+  font-size: 15px;
   display: flex;
   flex-direction: column;
-  font-size: 15px;
+  color: #171616;
 }
 
 .popup-form input,
@@ -250,25 +201,43 @@
   border: 1px solid #ccc;
   width: 100%;
   box-sizing: border-box;
+  margin-top: 5px;
 }
 
-/* Ensure consistent popup width and spacing */
-.popup-content {
-  max-width: 520px;
-  width: 90%;
-  padding: 35px;
-  border-radius: 20px;
-  box-sizing: border-box;
+.popup-form button,
+.popup-form .schedule-btn,
+.popup-form .apply-btn {
+  margin-top: 10px;
+  padding: 12px 20px;
+  font-size: 16px;
+  border-radius: 25px;
+  background-color: #FC834A;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  width: 100%;
+  transition: background-color 0.3s ease;
 }
 
-/* Mobile tweaks */
+.popup-form button:hover,
+.popup-form .schedule-btn:hover,
+.popup-form .apply-btn:hover {
+  background-color: #e76c2d;
+}
+
 @media (max-width: 600px) {
+  .popup-content {
+    padding: 20px;
+  }
+
   .popup-form label {
     font-size: 14px;
   }
 
   .popup-form input,
-  .popup-form textarea {
+  .popup-form textarea,
+  .popup-form select {
     font-size: 14px;
     padding: 8px;
   }
@@ -277,31 +246,4 @@
   .popup-form .apply-btn {
     font-size: 15px;
   }
-}
-/* Scrollbar Track */
-.popup-content::-webkit-scrollbar {
-  width: 8px;
-}
-
-/* Scrollbar Track Background */
-.popup-content::-webkit-scrollbar-track {
-  background: #0d1422;
-  border-radius: 10px;
-}
-
-/* Scrollbar Thumb */
-.popup-content::-webkit-scrollbar-thumb {
-  background-color: #1a59a6;
-  border-radius: 10px;
-  border: 2px solid #0d1422;
-}
-
-/* Firefox */
-.popup-content {
-  scrollbar-width: auto;
-  scrollbar-color: #efeff0 #1f3c75;
-}
-.popup-content {
-  max-height: 80vh;
-  overflow-y: auto;
 }

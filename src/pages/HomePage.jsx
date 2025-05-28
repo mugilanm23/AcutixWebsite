@@ -1,8 +1,8 @@
 import React from 'react';
 import './HomePage.css';
-import whyim from '../assets/why.jpg';
-import whoim from '../assets/who.jpg';
-import whatim from '../assets/what.jpg';
+import whyim from '../assets/whyac.jpg';
+import whoim from '../assets/whoarewe.jpg';
+import whatim from '../assets/whatt.jpg';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import { Link, useLocation } from 'react-router-dom';

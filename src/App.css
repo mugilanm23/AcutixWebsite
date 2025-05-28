@@ -20,7 +20,7 @@ button {
 
 @media (max-width: 768px) {
     .main-content {
-        padding-top: 90px; /* if navbar is taller on mobile */
+        padding-top: 90px; 
     }
 }
 

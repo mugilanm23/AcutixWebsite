@@ -65,9 +65,6 @@
 }
 
 
-/* Responsive design adjustments */
-
-/* For tablets and below */
 @media (max-width: 1024px) {
   .vision-mission {
     flex-direction: column;
@@ -112,7 +109,7 @@
   }
 }
 
-/* For mobile phones */
+
 @media (max-width: 768px) {
   .section-title {
     font-size: 20px;
@@ -167,7 +164,7 @@
     font-size: 12px;
   }
 }
-/* Director's Desk Styles */
+
 .directors-desk {
   margin-top: 40px;
   background-color: #e9f0f1;
@@ -237,7 +234,7 @@
   text-decoration: underline wavy #1a59a6;
 }
 
-/* Responsive */
+
 @media (max-width: 768px) {
   .director-content {
     flex-direction: column;
@@ -277,7 +274,6 @@
   scroll-padding: 10px;
   padding: 10px 0;
 }
-
 .testimonial-card {
   flex: 0 0 90%;
   max-width: 500px;
@@ -287,9 +283,16 @@
   border: 1px solid #3D3F61;
   border-radius: 16px;
   padding: 30px 24px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   margin: auto;
+
+
+  min-height: 280px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
+
 
 .testimonial-text {
   font-size: 1rem;
@@ -340,7 +343,7 @@
   color: gold;
 }
 
-/* Smooth scrolling, hidden scrollbars */
+
 .testimonial-scroll-wrapper::-webkit-scrollbar {
   display: none;
 }
@@ -349,30 +352,6 @@
   scrollbar-width: none;
 }
 
-/* Responsive Tweaks */
-@media (min-width: 600px) {
-  .testimonial-card {
-    flex: 0 0 80%;
-  }
-}
-
-@media (min-width: 768px) {
-  .testimonial-card {
-    flex: 0 0 60%;
-  }
-}
-
-@media (min-width: 1024px) {
-  .testimonial-card {
-    flex: 0 0 45%;
-  }
-}
-
-@media (min-width: 1280px) {
-  .testimonial-card {
-    flex: 0 0 40%;
-  }
-}
 .testimonial-controls {
   display: flex;
   align-items: center;
@@ -403,4 +382,27 @@
 .card h2{
   color: #FC834A;
   font-size:30px;
+}
+@media (min-width: 600px) {
+  .testimonial-card {
+    flex: 0 0 80%;
+  }
+}
+
+@media (min-width: 768px) {
+  .testimonial-card {
+    flex: 0 0 60%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .testimonial-card {
+    flex: 0 0 45%;
+  }
+}
+
+@media (min-width: 1280px) {
+  .testimonial-card {
+    flex: 0 0 40%;
+  }
 }

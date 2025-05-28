@@ -4,14 +4,14 @@ import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 
 const Career = () => {
-  const linkedInJobsUrl = "https://www.linkedin.com/company/acutix/jobs/"; // <-- Put your actual LinkedIn jobs URL here
+  const linkedInJobsUrl = "https://www.linkedin.com/company/acutix/jobs/"; 
 
   const jobOpenings = [
     {
       title: "Senior Full stack Developer",
       details: "5+ years experience , Full time work",
       description: "lead development of core products",
-      applyUrl: linkedInJobsUrl // You can use different URLs if you want
+      applyUrl: linkedInJobsUrl 
     },
     {
       title: "UX/UI Designer",
@@ -53,7 +53,7 @@ const Career = () => {
         <h1 className="team-heading">JOIN OUR TEAM</h1>
         <p className="team-subtext">build the future of technology with us</p>
 
-        {/* LinkedIn Jobs button */}
+
         <button
           className="open-btn"
           onClick={() => window.open(linkedInJobsUrl, '_blank')}
@@ -69,7 +69,7 @@ const Career = () => {
               <p className="job-details">{job.details}</p>
               <p className="job-desc">{job.description}</p>
 
-              {/* Apply Now button linking to LinkedIn */}
+
               <a
                 href={job.applyUrl}
                 target="_blank"
