@@ -124,9 +124,6 @@ h1{
   transform: translateY(-10px);
 }
 
-/* Responsive design adjustments */
-
-/* For tablets and below */
 @media (max-width: 1024px) {
   .job-listings {
     max-width: 100%;
@@ -160,7 +157,7 @@ h1{
   }
 }
 
-/* For mobile phones */
+
 @media (max-width: 768px) {
   .team-heading {
     font-size: 22px;

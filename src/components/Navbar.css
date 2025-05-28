@@ -54,7 +54,6 @@
   display: inline-block;
 }
 
-/* For mobile phones */
 @media (max-width: 768px) {
   .navbar {
     padding: 10px 15px;
@@ -83,7 +82,7 @@
     top: 60px;
     left: 0;
     right: 0;
-    background-color: #FC834A;
+    background-color:#3D3F61;
     padding: 20px 0;
   }
 
@@ -123,7 +122,7 @@
   }
 }
 
-/* Hide the hamburger button on larger screens */
+
 @media (min-width: 769px) {
   .navbar-toggle {
     display: none;

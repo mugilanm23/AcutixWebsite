@@ -94,9 +94,6 @@
   transform: translateY(-10px);
 }
 
-/* Responsive design adjustments */
-
-/* For tablets and below */
 @media (max-width: 1024px) {
   .contact-heading {
     font-size: 30px;
@@ -141,7 +138,6 @@
   }
 }
 
-/* For mobile phones */
 @media (max-width: 768px) {
   .contact-heading {
     font-size: 24px;

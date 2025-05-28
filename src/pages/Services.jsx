@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import './Services.css';
 import im1 from '../assets/im1.jpg';
-import im2 from '../assets/im2.jpg';
-import im3 from '../assets/im3.jpg';
-import im4 from '../assets/im4.jpg';
-import im5 from '../assets/im5.jpg';
+import im2 from '../assets/app.jpg';
+import im3 from '../assets/ivstudents.jpg';
+import im4 from '../assets/internprg.jpg';
+import im5 from '../assets/techmeetup.jpg';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 
@@ -85,50 +85,66 @@ const popupContent = {
       </form>
     </>
   ),
-  "Internship Program": (
-    <>
-      <h2>Apply for Internship</h2>
-      <form
-        className="popup-form"
-        onSubmit={async (e) => {
-          e.preventDefault();
-          const formData = new FormData(e.target);
-          const data = Object.fromEntries(formData.entries());
-          try {
-            const response = await fetch('https://acutixbackend.onrender.com/api/apply-internship', {
-              method: 'POST',
-              headers: { 'Content-Type': 'application/json' },
-              body: JSON.stringify(data),
-            });
+"Internship Program": (
+  <>
+    <h2>Apply for Internship</h2>
+    <form
+      className="popup-form"
+      onSubmit={async (e) => {
+        e.preventDefault();
+        const formData = new FormData(e.target);
 
-            if (response.ok) {
-              alert("Application submitted successfully!");
-              e.target.reset();
-            } else {
-              alert("Failed to submit application.");
-            }
-          } catch (error) {
-            alert("Server error. Try again later.");
+        try {
+          const response = await fetch('https://acutixbackend.onrender.com/api/apply-internship', {
+            method: 'POST',
+            body: formData, 
+          });
+
+          if (response.ok) {
+            alert("Application submitted successfully!");
+            e.target.reset();
+          } else {
+            alert("Failed to submit application.");
           }
-        }}
-      >
-        <label>Full Name:<input type="text" name="name" required /></label>
-        <label>Email:<input type="email" name="email" required /></label>
-        <label>Phone:<input type="tel" name="phone" required /></label>
-        <label>LinkedIn:<input type="url" name="linkedin" /></label>
-        <label>GitHub/Portfolio:<input type="url" name="portfolio" /></label>
-        <label>Domain:
-          <select name="domain">
-            <option>Frontend</option>
-            <option>Backend</option>
-            <option>Fullstack</option>
-          </select>
-        </label>
-        <label>Why you want to join:<textarea name="reason" rows="4" required /></label>
-        <button type="submit" className="apply-btn">Apply Now</button>
-      </form>
-    </>
-  )
+        } catch (error) {
+          alert("Server error. Try again later.");
+        }
+      }}
+      encType="multipart/form-data"
+    >
+      <label>Full Name:
+        <input type="text" name="name" required />
+      </label>
+      <label>Email:
+        <input type="email" name="email" required />
+      </label>
+      <label>Phone:
+        <input type="tel" name="phone" required />
+      </label>
+      <label>College:
+        <input type="text" name="college" />
+      </label>
+      <label>Department:
+        <input type="text" name="department" />
+      </label>
+      <label>Upload Resume:
+        <input type="file" name="resume" accept=".pdf,.doc,.docx" required />
+      </label>
+      <label>Domain:
+        <select name="domain" required>
+          <option value="">Select Domain</option>
+          <option value="Frontend">Frontend</option>
+          <option value="Backend">Backend</option>
+          <option value="Fullstack">Fullstack</option>
+        </select>
+      </label>
+      <label>Why you want to join:
+        <textarea name="reason" rows="4" required />
+      </label>
+      <button type="submit" className="apply-btn">Apply Now</button>
+    </form>
+  </>
+)
 };
 
 const Services = () => {

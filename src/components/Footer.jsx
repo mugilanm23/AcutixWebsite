@@ -2,11 +2,9 @@ import React from 'react';
 import './Footer.css';
 import acutixlogo from '../assets/AcutixLogo.jpg';
 import linkedinIcon from '../assets/linkedin.png';
-/* import xIcon from '../assets/x.png';
-import youtubeIcon from '../assets/youtube.png'; */
 import instagramIcon from '../assets/instagram.png';
-// import pinterestIcon from '../assets/pinterest.png';
 import facebookIcon from '../assets/facebook.png';
+import { Link } from 'react-router-dom';
 
 function Footer() {
   return (
@@ -15,24 +13,25 @@ function Footer() {
         <div className="footer-logo">
           <img src={acutixlogo} alt="Acutix Logo" />
         </div>
-        <div className="footer-section">
-          <h3>Pages</h3>
-          <ul>
-            <li>Home</li>
-            <li>Services</li>
-            <li>Careers</li>
-            <li>About us</li>
-            <li>Contact us</li>
-          </ul>
-        </div>
+<div className="footer-section">
+  <h3>Pages</h3>
+  <ul>
+    <li><Link to="/">Home</Link></li>
+    <li><Link to="/services">Services</Link></li>
+    <li><Link to="/career">Careers</Link></li>
+    <li><Link to="/about">About us</Link></li>
+    <li><Link to="/contact">Contact us</Link></li>
+  </ul>
+</div>
+
         <div className="footer-section">
           <h3>Services</h3>
           <ul>
-            <li>Software development</li>
-            <li>Application development</li>
-            <li>Tech meetup</li>
-            <li>Industrial visit for students</li>
-            <li>Internship training</li>
+            <li><Link to="/services">Software development</Link></li>
+            <li><Link to="/services">Application development</Link></li>
+            <li><Link to="/services">Tech meetup</Link></li>
+            <li><Link to="/services">Industrial visit for students</Link></li>
+            <li><Link to="/services">Internship training</Link></li>
           </ul>
         </div>
         <div className="footer-section">
@@ -44,18 +43,9 @@ function Footer() {
             <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
               <img src={linkedinIcon} alt="LinkedIn" />
             </a>
-{/*             <a href="https://x.com" target="_blank" rel="noopener noreferrer">
-              <img src={xIcon} alt="X" />
-            </a>
-            <a href="https://youtube.com" target="_blank" rel="noopener noreferrer">
-              <img src={youtubeIcon} alt="YouTube" />
-            </a> */}
             <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
               <img src={instagramIcon} alt="Instagram" />
             </a>
-            {/* <a href="https://pinterest.com" target="_blank" rel="noopener noreferrer">
-              <img src={pinterestIcon} alt="Pinterest" />
-            </a> */}
             <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
               <img src={facebookIcon} alt="Facebook" />
             </a>

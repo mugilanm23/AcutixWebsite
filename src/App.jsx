@@ -13,7 +13,7 @@ function App() {
   const location = useLocation();
 
   React.useEffect(() => {
-    window.scrollTo(0, 0); // Scroll to top when navigating to a new page
+    window.scrollTo(0, 0); 
   }, [location]);
 
   return (
