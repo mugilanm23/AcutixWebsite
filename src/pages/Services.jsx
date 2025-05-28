@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './Services.css';
 import im1 from '../assets/im1.jpg';
-import im2 from '../assets/app.jpg';
+import im2 from '../assets/App.jpg';
 import im3 from '../assets/ivstudents.jpg';
 import im4 from '../assets/internprg.jpg';
 import im5 from '../assets/techmeetup.jpg';
