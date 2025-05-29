@@ -73,14 +73,14 @@ const popupContent = {
         <label>Meetup Topic:<input type="text" name="topic" required /></label>
         <label>Date:<input type="date" name="date" required /></label>
         <label>Time:<input type="time" name="time" required /></label>
-        <label>Host Name:<input type="text" name="host" required /></label>
+        <label>Host Name:<input type="text" name="host" /></label>
         <label>Mode:
           <select name="mode">
             <option>Online</option>
             <option>Offline</option>
           </select>
         </label>
-        <label>Description:<textarea name="description" rows="4" required /></label>
+        <label>Description:<textarea name="description" rows="4" /></label>
         <button type="submit" className="schedule-btn">Schedule Now</button>
       </form>
     </>
@@ -127,8 +127,8 @@ const popupContent = {
       <label>Department:
         <input type="text" name="department" />
       </label>
-      <label>Upload Resume:
-        <input type="file" name="resume" accept=".pdf,.doc,.docx" required />
+      <label>Year:
+        <input type="Number" name="year" />
       </label>
       <label>Domain:
         <select name="domain" required>
@@ -139,7 +139,7 @@ const popupContent = {
         </select>
       </label>
       <label>Why you want to join:
-        <textarea name="reason" rows="4" required />
+        <textarea name="reason" rows="4" />
       </label>
       <button type="submit" className="apply-btn">Apply Now</button>
     </form>
