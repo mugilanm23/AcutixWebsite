@@ -36,7 +36,7 @@ const Contact = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch('https://acutix-website.vercel.app/backend', {
+      const response = await fetch('https://acutixbackend.onrender.com/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData)
@@ -64,7 +64,7 @@ const Contact = () => {
   const handleScheduleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch('https://acutix-website.vercel.app/backend', {
+      const response = await fetch('https://acutixbackend.onrender.com/api/schedule', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(scheduleData)
