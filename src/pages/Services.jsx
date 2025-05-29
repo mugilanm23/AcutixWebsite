@@ -93,11 +93,15 @@ const popupContent = {
       onSubmit={async (e) => {
         e.preventDefault();
         const formData = new FormData(e.target);
+        const data = Object.fromEntries(formData.entries());
 
         try {
           const response = await fetch('https://acutixbackend.onrender.com/api/apply-internship', {
             method: 'POST',
-            body: formData, 
+             headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(data),
           });
 
           if (response.ok) {
@@ -110,7 +114,6 @@ const popupContent = {
           alert("Server error. Try again later.");
         }
       }}
-      encType="multipart/form-data"
     >
       <label>Full Name:
         <input type="text" name="name" required />
@@ -139,7 +142,7 @@ const popupContent = {
         </select>
       </label>
       <label>Why you want to join:
-        <textarea name="reason" rows="4" />
+        <textarea name="message" rows="4" />
       </label>
       <button type="submit" className="apply-btn">Apply Now</button>
     </form>
