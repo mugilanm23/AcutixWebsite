@@ -2,9 +2,18 @@ import React from 'react';
 import './Career.css';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
+import img1 from "../assets/img1.jpg";
+import img2 from "../assets/img2.jpg";
+import img3 from "../assets/img3.jpg";
+import img4 from "../assets/img4.jpg";
+import img5 from "../assets/img5.jpg";
+import img6 from "../assets/img6.jpg";
+import img7 from "../assets/img7.jpg";
+import img9 from "../assets/img9.jpg";
+
 
 const Career = () => {
-  const linkedInJobsUrl = "https://www.linkedin.com/company/acutix/jobs/"; 
+  const linkedInJobsUrl = "https://www.linkedin.com/company/acutix-soft-llp/"; 
 
   const jobOpenings = [
     {
@@ -81,6 +90,24 @@ const Career = () => {
             </div>
           ))}
         </div>
+
+        <h1 className="section-title">TECH MEETUPS & COMPANY LIFE</h1>
+        <p className="team-subtext">
+          At Acutix Soft LLP, we believe that great tech is built by happy, connected teams. 
+          From engaging tech meetups to lively team activities, our culture thrives on collaboration, 
+          creativity, and continuous learning. Here’s a glimpse into life at Acutix!
+        </p>
+        <div className="gallery-grid">
+          <img src={img1} alt="" />
+          <img src={img2} alt="" />
+          <img src={img3} alt="" />
+          <img src={img4} alt="" />
+          <img src={img5} alt="" />
+          <img src={img6} alt="" />
+          <img src={img7} alt="" />
+          <img src={img9} alt="" />
+        </div>
+
 
         <h1 className="section-title">PERKS AND BENEFITS</h1>
         <div className="benefits-section">

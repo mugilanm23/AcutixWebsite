@@ -6,30 +6,35 @@ import Footer from '../components/Footer';
 
 const testimonials = [
   {
+    letter:'P',
     name: 'prathab singh',
     title: '',
     review: "I have worked as freelancer with Acutix soft LLP( formerly Digital Touch IT Solutions ), and it has been a fantastic experience. It's a great place to work and make meaningful contributions. Their internship support for students is highly commendable. For small businesses, they are the ideal choice for software solutions.",
     rating: 4,
   },
   {
+    letter:'R',
     name: "Rishi krishna",
     title: '',
     review: "We had the privilege of collaborating with an expert from Acutix soft LLP( formerly Digital Touch IT Solutions ) for an event organized by CIT (HackFusion-24). The panel member carefully assessed all participants' projects and identified the best ones. ",
     rating: 5,
   },
   {
+    letter:'D',
     name: "Dinesh Vasudevan",
     title: '',
     review: "I collaborated with Acutix soft LLP( formerly Digital Touch IT Solutions ) to develop websites for my cricket coaching center. Their team delivered an impressive website at a reasonable cost. Definitely a reliable company for your software needs!",
     rating: 5,
   },
   {
+    letter:'S',
     name: "Suriyakumar CR",
     title: '',
     review: "Skilled software professionals, their expertise and dedication made a significant impact on clients' project. They get into the requirements well and delivering high-quality solutions.",
     rating: 5,
   },
   {
+    letter:'N',
     name: "Nithisha J",
     title: '',
     review: "I collaborated with experts from Acutix soft LLP( formerly Digital Touch IT Solutions ) to conduct a knowledge-sharing session on IoT and Blockchain. They delivered an insightful and highly valuable session.",
@@ -156,7 +161,7 @@ const testimonials = [
                   <p className="testimonial-text">{item.review}</p>
                   <div className="testimonial-footer">
                     <div className="user-info">
-                      <div className="user-avatar"></div>
+                      <div className="user-avatar"><h3>{item.letter}</h3></div>
                       <div>
                         <div className="user-name">{item.name}</div>
                         <div className="user-title">{item.title}</div>
