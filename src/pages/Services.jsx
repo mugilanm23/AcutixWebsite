@@ -53,7 +53,7 @@ const popupContent = {
           const data = Object.fromEntries(formData.entries());
 
           try {
-            const response = await fetch('https://acutixbackend.onrender.com/api/schedule-meetup', {
+            const response = await fetch('https://www.digitaltouchcorp.com/api/schedule-meetup', {
               method: 'POST',
               headers: { 'Content-Type': 'application/json' },
               body: JSON.stringify(data),
@@ -96,7 +96,7 @@ const popupContent = {
         const data = Object.fromEntries(formData.entries());
 
         try {
-          const response = await fetch('https://acutixbackend.onrender.com/api/apply-internship', {
+          const response = await fetch('https://www.digitaltouchcorp.com/api/apply-internship', {
             method: 'POST',
              headers: {
               'Content-Type': 'application/json',
