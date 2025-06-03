@@ -65,7 +65,7 @@ const Contact = () => {
   const handleScheduleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch('https://api.digitaltouchcorp.com//api/schedule', {
+      const response = await fetch('https://api.digitaltouchcorp.com/api/schedule', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(scheduleData)
