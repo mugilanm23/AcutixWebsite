@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import './HomePage.css';
 import whyim from '../assets/whyac.jpg';
 import whoim from '../assets/whoarewe.jpg';
@@ -9,12 +9,6 @@ import { Link, useLocation } from 'react-router-dom';
 
 function HomePage() {
   const location = useLocation();
-
-  useEffect(() => {
-    // Save current path to localStorage for persistent navigation info
-    localStorage.setItem('lastVisitedPage', location.pathname);
-  }, [location.pathname]);
-
   const isActive = (path) => location.pathname === path;
 
   return (
