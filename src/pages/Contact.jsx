@@ -1,7 +1,7 @@
 import './Contact.css';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -23,6 +23,23 @@ const Contact = () => {
     additionalInfo: ''
   });
 
+  // Load saved form data from localStorage on mount
+  useEffect(() => {
+    const savedForm = JSON.parse(localStorage.getItem('contactForm'));
+    const savedSchedule = JSON.parse(localStorage.getItem('scheduleForm'));
+    if (savedForm) setFormData(savedForm);
+    if (savedSchedule) setScheduleData(savedSchedule);
+  }, []);
+
+  // Save form data to localStorage on change
+  useEffect(() => {
+    localStorage.setItem('contactForm', JSON.stringify(formData));
+  }, [formData]);
+
+  useEffect(() => {
+    localStorage.setItem('scheduleForm', JSON.stringify(scheduleData));
+  }, [scheduleData]);
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData(prev => ({ ...prev, [name]: value }));
@@ -35,24 +52,21 @@ const Contact = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    try{
+    try {
       const response = await fetch('https://api.digitaltouchcorp.com/api/contact', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(formData)
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData)
       });
 
       const data = await response.json();
       if (response.ok) {
         alert('Form submitted successfully!');
-        setFormData({
-          firstName: '',
-          lastName: '',
-          email: '',
-          phone: '',
-          helpType: '',
-          additionalInfo: ''
-        });
+        const cleared = {
+          firstName: '', lastName: '', email: '', phone: '', helpType: '', additionalInfo: ''
+        };
+        setFormData(cleared);
+        localStorage.removeItem('contactForm');
       } else {
         alert('Failed to submit: ' + data.message);
       }
@@ -74,14 +88,11 @@ const Contact = () => {
       const data = await response.json();
       if (response.ok) {
         alert('Schedule request submitted successfully!');
-        setScheduleData({
-          name: '',
-          email: '',
-          type: 'Call',
-          date: '',
-          time: '',
-          additionalInfo: ''
-        });
+        const cleared = {
+          name: '', email: '', type: 'Call', date: '', time: '', additionalInfo: ''
+        };
+        setScheduleData(cleared);
+        localStorage.removeItem('scheduleForm');
         setPopupOpen(false);
       } else {
         alert('Failed to submit schedule: ' + data.message);

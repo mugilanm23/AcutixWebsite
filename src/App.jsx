@@ -9,6 +9,7 @@ import Career from './pages/Career';
 import Contact from './pages/Contact';
 import About from './pages/About';
 
+
 function App() {
   const location = useLocation();
 
