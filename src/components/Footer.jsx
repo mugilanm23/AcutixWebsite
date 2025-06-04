@@ -40,10 +40,10 @@ function Footer() {
           <p>proprietor@digitaltouchcorp.com</p>
           <p>+91 6369936706</p>
           <div className="social-icons">
-            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.linkedin.com/company/acutix-soft-llp/" target="_blank" rel="noopener noreferrer">
               <img src={linkedinIcon} alt="LinkedIn" />
             </a>
-            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.instagram.com/acutixsoft?igsh=YXNxZ2I1aGR2Nm44" target="_blank" rel="noopener noreferrer">
               <img src={instagramIcon} alt="Instagram" />
             </a>
             <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
