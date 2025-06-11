@@ -1,16 +1,16 @@
 .careers-page {
-  background-color: 	#e9f0f1;
-  color: 	#191818;
+  background-color: #e9f0f1;
+  color: #191818;
   padding: 40px 20px;
   min-height: 100vh;
   text-align: center;
 }
-h1{
-  color:	#FC834A;
+
+h1 {
+  color: #FC834A;
 }
 
 .team-heading {
-
   font-weight: bold;
 }
 
@@ -21,7 +21,7 @@ h1{
 }
 
 .open-btn {
-  background-color:#FC834A;
+  background-color: #FC834A;
   color: white;
   padding: 10px 25px;
   border: none;
@@ -34,7 +34,7 @@ h1{
 
 .open-btn:hover {
   transform: translateY(-5px);
-  color:#42c3f4;
+  color: #42c3f4;
 }
 
 .section-title {
@@ -54,17 +54,26 @@ h1{
 
 .job-card {
   background-color: #f0f4f5;
-  color: 	#10182b;
+  color: #10182b;
   padding: 15px 20px;
   border: 1px solid #3D3F61;
   text-align: left;
   border-radius: 5px;
   position: relative;
-  transition: transform 0.3s ease-in-out;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  opacity: 0;
+  transform: translateY(30px);
 }
 
 .job-card:hover {
-  transform: translateY(-10px);
+  transform: scale(1.03);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+.job-card.animate-in {
+  animation: fadeSlideUp 0.9s ease forwards;
+  opacity: 1;
 }
 
 .job-card h4 {
@@ -85,7 +94,7 @@ h1{
   position: absolute;
   right: 20px;
   top: 20px;
-  color: 	#3e639c;
+  color: #3e639c;
   font-weight: bold;
   text-decoration: none;
   transition: transform 0.3s ease-in-out;
@@ -105,25 +114,79 @@ h1{
   gap: 20px;
   margin-top: 20px;
 }
-.benefits-section h4{
-  color: 	#3e639c;
+
+.benefits-section h4 {
+  color: #3e639c;
   font-size: large;
 }
 
 .benefit-card {
   background-color: #f0f4f5;
-  color: 	#10182b;
+  color: #10182b;
   padding: 20px;
   border: 1px solid #3D3F61;
   border-radius: 5px;
   font-weight: bold;
-  transition: transform 0.3s ease-in-out;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  opacity: 0;
+  transform: translateY(30px);
 }
 
 .benefit-card:hover {
-  transform: translateY(-10px);
+  transform: scale(1.03);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
 }
 
+.benefit-card.animate-in {
+  animation: fadeSlideUp 0.9s ease forwards;
+  opacity: 1;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  margin: 40px auto;
+  padding: 0 10px;
+  justify-items: center;
+}
+
+.gallery-grid img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 10px;
+  border: 1px solid #3D3F61;
+  opacity: 0;
+  transform: scale(0.95) translateY(30px);
+  transition: transform 0.5s ease, box-shadow 0.5s ease, opacity 0.6s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* stronger base shadow */
+}
+
+.gallery-grid img.animate-in {
+  opacity: 1;
+  transform: scale(1) translateY(0);
+}
+
+.gallery-grid img:hover {
+  transform: scale(1.08);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.80); /* deeper hover shadow */
+}
+
+
+@keyframes fadeSlideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive */
 @media (max-width: 1024px) {
   .job-listings {
     max-width: 100%;
@@ -155,8 +218,11 @@ h1{
   .culture-points {
     font-size: 14px;
   }
-}
 
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
 
 @media (max-width: 768px) {
   .team-heading {
@@ -186,10 +252,7 @@ h1{
     font-size: 18px;
   }
 
-  .job-details {
-    font-size: 14px;
-  }
-
+  .job-details,
   .job-desc {
     font-size: 14px;
   }
@@ -205,36 +268,9 @@ h1{
   .benefits-section {
     grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
   }
-}
-.gallery-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr); /* Exactly 4 columns */
-  gap: 20px;
-  margin-top: 20px;
-  justify-items: center;
-}
 
-.gallery-grid img {
-  width: 100%;
-  height: 220px;
-  object-fit: cover;
-  border-radius: 8px;
-  border: 1px solid #3D3F61;
-  transition: transform 0.3s ease-in-out;
-}
-
-.gallery-grid img:hover {
-  transform: scale(1.03);
-}
-@media (max-width: 1024px) {
   .gallery-grid {
-    grid-template-columns: repeat(2, 1fr); /* 2 columns on tablets */
-  }
-}
-
-@media (max-width: 600px) {
-  .gallery-grid {
-    grid-template-columns: 1fr; /* Stack images on smaller screens */
+    grid-template-columns: 1fr;
   }
 
   .gallery-grid img {

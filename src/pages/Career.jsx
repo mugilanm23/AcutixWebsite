@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './Career.css';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
@@ -11,16 +11,15 @@ import img6 from "../assets/img6.jpg";
 import img7 from "../assets/img7.jpg";
 import img9 from "../assets/img9.jpg";
 
-
 const Career = () => {
-  const linkedInJobsUrl = "https://www.linkedin.com/company/acutix-soft-llp/"; 
+  const linkedInJobsUrl = "https://www.linkedin.com/company/acutix-soft-llp/";
 
   const jobOpenings = [
     {
       title: "Senior Full stack Developer",
       details: "5+ years experience , Full time work",
       description: "lead development of core products",
-      applyUrl: linkedInJobsUrl 
+      applyUrl: linkedInJobsUrl
     },
     {
       title: "UX/UI Designer",
@@ -55,13 +54,33 @@ const Career = () => {
     }
   ];
 
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('animate-in');
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    const jobCards = document.querySelectorAll('.job-card');
+    const benefitCards = document.querySelectorAll('.benefit-card');
+    const galleryImgs = document.querySelectorAll('.gallery-grid img');
+
+    [...jobCards, ...benefitCards, ...galleryImgs].forEach(el => observer.observe(el));
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <>
       <Navbar />
       <div className="careers-page">
         <h1 className="team-heading">JOIN OUR TEAM</h1>
         <p className="team-subtext">build the future of technology with us</p>
-
 
         <button
           className="open-btn"
@@ -77,8 +96,6 @@ const Career = () => {
               <h4>{job.title}</h4>
               <p className="job-details">{job.details}</p>
               <p className="job-desc">{job.description}</p>
-
-
               <a
                 href={job.applyUrl}
                 target="_blank"
@@ -97,17 +114,12 @@ const Career = () => {
           From engaging tech meetups to lively team activities, our culture thrives on collaboration, 
           creativity, and continuous learning. Here’s a glimpse into life at Acutix!
         </p>
-        <div className="gallery-grid">
-          <img src={img1} alt="" />
-          <img src={img2} alt="" />
-          <img src={img3} alt="" />
-          <img src={img4} alt="" />
-          <img src={img5} alt="" />
-          <img src={img6} alt="" />
-          <img src={img7} alt="" />
-          <img src={img9} alt="" />
-        </div>
 
+        <div className="gallery-grid">
+          {[img1, img2, img3, img4, img5, img6, img7, img9].map((src, i) => (
+            <img src={src} alt={`Gallery ${i + 1}`} key={i} />
+          ))}
+        </div>
 
         <h1 className="section-title">PERKS AND BENEFITS</h1>
         <div className="benefits-section">
