@@ -82,7 +82,7 @@ const popupContent = {
         const formData = new FormData(e.target);
         const data = Object.fromEntries(formData.entries());
         try {
-          const res = await fetch('"https://api.acutixsoft.com/api/apply-internship', {
+          const res = await fetch('https://api.acutixsoft.com/api/apply-internship', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(data),
