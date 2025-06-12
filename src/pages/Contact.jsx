@@ -36,7 +36,7 @@ const Contact = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try{
-      const response = await fetch('https://api.digitaltouchcorp.com/api/contact', {
+      const response = await fetch('https://api.acutixsoft.com/api/contact', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(formData)
@@ -65,7 +65,7 @@ const Contact = () => {
   const handleScheduleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch('https://api.digitaltouchcorp.com/api/schedule', {
+      const response = await fetch('https://api.acutixsoft.com/api/schedule', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(scheduleData)
