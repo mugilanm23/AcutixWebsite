@@ -16,7 +16,7 @@ function useIntersectionAnimation(className, animationClass) {
           }
         });
       },
-      { threshold: 0.2 }
+      { threshold: 0.05 }
     );
     elements.forEach((el) => observer.observe(el));
     return () => elements.forEach((el) => observer.unobserve(el));
