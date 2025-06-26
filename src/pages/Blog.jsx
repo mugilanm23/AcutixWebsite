@@ -1,6 +1,15 @@
 import React, { useState, useEffect } from "react";
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
+import i1 from '../assets/image1.jpg';
+import i2 from '../assets/image2.jpg';
+import i3 from '../assets/image3.jpg';
+import i4 from '../assets/image4.jpg';
+import i5 from '../assets/image5.jpg';
+import i6 from '../assets/image6.jpg';
+import i7 from '../assets/image7.jpg';
+import i8 from '../assets/image10.jpg';
+import i9 from '../assets/image9.jpg';
 import "./Blog.css";
 
 function useIntersectionAnimation(className, animationClass) {
@@ -139,7 +148,7 @@ const blogPosts = [
     date: "June 25, 2025",
     description:
       "Explore why rule-based AI systems are making a comeback in critical industries like healthcare, finance, and aerospace.",
-    image: "/placeholder.svg?height=250&width=400",
+    image:i3,
   },
   {
     id: 2,
@@ -147,7 +156,7 @@ const blogPosts = [
     date: "June 20, 2025",
     description:
       "Discover how AIOps revolutionizes IT operations with machine learning, automation, and predictive analytics for smarter infrastructure.",
-    image: "/placeholder.svg?height=250&width=400",
+    image: i2,
   },
   {
     id: 3,
@@ -155,7 +164,7 @@ const blogPosts = [
     date: "June 15, 2025",
     description:
       "Learn how submitting an XML sitemap improves your SEO by helping search engines crawl and index your site efficiently.",
-    image: "/placeholder.svg?height=250&width=400",
+    image: i5,
   },
   {
     id: 4,
@@ -163,7 +172,7 @@ const blogPosts = [
     date: "June 12, 2025",
     description:
       "See how GenAI speeds up debugging by generating code suggestions, explaining errors, and creating diagnostic scripts.",
-    image: "/placeholder.svg?height=250&width=400",
+    image: i4,
   },
   {
     id: 5,
@@ -171,7 +180,7 @@ const blogPosts = [
     date: "June 10, 2025",
     description:
       "Examine how agentic AI shifts developer roles from coding to orchestration, and what skills will be in demand next.",
-    image: "/placeholder.svg?height=250&width=400",
+    image: i1,
   },
   {
     id: 6,
@@ -179,7 +188,7 @@ const blogPosts = [
     date: "June 8, 2025",
     description:
       "Explore top AI website builders like Wix ADI, Framer, and Bookmark that simplify design for businesses and individuals.",
-    image: "/placeholder.svg?height=250&width=400",
+    image: i6,
   },
   {
     id: 7,
@@ -187,7 +196,7 @@ const blogPosts = [
     date: "June 5, 2025",
     description:
       "Get mentored by industry experts in web dev, AI, and UI/UX. Gain project experience, certifications, and a resume boost.",
-    image: "/placeholder.svg?height=250&width=400",
+    image: i7,
   },
   {
     id: 8,
@@ -195,7 +204,7 @@ const blogPosts = [
     date: "June 2, 2025",
     description:
       "Understand LVMs: how they process video, audio, and text to generate content, analyze motion, and enable smart video tools.",
-    image: "/placeholder.svg?height=250&width=400",
+    image: i8,
   },
   {
     id: 9,
@@ -203,7 +212,7 @@ const blogPosts = [
     date: "May 30, 2025",
     description:
       "Compare Node.js and Spring Boot for different use cases — real-time apps, enterprise systems, microservices, and scalability.",
-    image: "/placeholder.svg?height=250&width=400",
+    image: i9,
   }
 ];
 
