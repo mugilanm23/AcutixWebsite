@@ -22,6 +22,7 @@ function Navbar() {
         <li><Link className={`nav-link ${isActive('/') ? 'active' : ''}`} to="/">Home</Link></li>
         <li><Link className={`nav-link ${isActive('/services') ? 'active' : ''}`} to="/services">Services</Link></li>
         <li><Link className={`nav-link ${isActive('/career') ? 'active' : ''}`} to="/career">Careers</Link></li>
+        <li><Link className={`nav-link ${isActive('/blog') ? 'active' : ''}`} to="/blog">Blog</Link></li>
         <li><Link className={`nav-link ${isActive('/about') ? 'active' : ''}`} to="/about">About Us</Link></li>
         <li><Link className={`nav-link ${isActive('/contact') ? 'active' : ''}`} to="/contact">Contact Us</Link></li>
       </ul>
